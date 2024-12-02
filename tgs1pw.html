@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suku Di NTB </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #fafafa;
+        }
+
+        /* Header Judul */
+        .header {
+            background: yellowgreen; 
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 32px;
+            font-weight: bold;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Kontainer Utama */
+        .container {
+            display: flex;
+            height: calc(100vh - 80px);
+        }
+
+        /* Samping kiri (menu) */
+        .menu {
+            width: 20%;
+            background: lightblue; /* Gradasi kuning */
+            padding: 20px;
+            color: #333;
+            box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu h2 {
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .menu ul li {
+            margin-bottom: 15px;
+            cursor: pointer;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 18px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .menu ul li:nth-child(1) {
+            background-color: lightcyan; /* Warna menu untuk Rumah Tradisonal */
+            color: black;
+        }
+
+        .menu ul li:nth-child(2) {
+            background-color: lightgoldenrodyellow; /* Warna menu untuk Baju Adat */
+            color: black;
+        }
+
+        .menu ul li:nth-child(3) {
+            background-color: lightgray; /* Warna menu untuk Minuman Tradisonal */
+            color: black;
+        }
+        .menu ul li:nth-child(4) {
+            background-color:lightpink; /* Warna menu untuk Makanan Tradisonal */
+            color: black;
+        }
+        .menu ul li:nth-child(5) {
+            background-color:lightsalmon; /* Warna menu untuk Wisata Populer */
+            color:black;
+        }
+
+        .menu ul li:hover {
+            opacity: 0.8;
+        }
+
+        /* Tengah (konten utama) */
+        .content {
+            width: 60%;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        .content h2 {
+            font-size: 28px;
+            color: #333;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        /* Samping kanan (informasi tambahan) */
+        .right-panel {
+            width: 20%;
+            background: chocolate;
+            padding: 20px;
+            color: white;
+            box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .right-panel h3 {
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .right-panel ul {
+            list-style: square;
+            margin-left: 20px;
+        }
+
+        .right-panel ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Sembunyikan konten awalnya */
+        .content {
+            display: none;
+        }
+ 
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto; /* Pusatkan gambar */
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- Bagian Header -->
+    <div class="header">
+       SUKU BIMA
+    </div>
+
+    <!-- Bagian Kontainer Utama -->
+    <div class="container">
+        <!-- Bagian Menu -->
+        <div class="menu">
+            <h2>Keragaman Budaya Bima</h2>
+            <ul>
+                <li onclick="showContent('content1')">Rumah Tradisional</li>
+                <li onclick="showContent('content2')">Baju Adat</li>
+                <li onclick="showContent('content3')">Makanan Tradisonal</li>
+                <li onclick="showContent('content4')">Muniman Tradisonal</li>
+                <li onclick="showContent('content5')">Wisata Populer</li>
+            </ul>
+        </div>
+
+      <!-- Bagian Konten Utama -->
+        <div id="content1" class="content">
+            <h2>Uma Lengge</h2> 
+            <img src="rumah.jpg.jpeg" alt="Uma Lengge" width="400" height="200">
+            <p class="short-text">
+                Uma Lengge merupakan bangunan tradisional suku Mbojo yang berada di Kecamatan Wawo, Kabupaten Bima. Bangunan yang mirip rumah ini sudah ada sejak ratusan bahkan ribuan tahun silam. Walau terlihat sederhana, bangunan ini membutuhkan artistik yang unik dan harus ada keahlian khusus untuk membuatnya. Semua bahan bangunannya berupa kayu dan bambu, serta rumbia atau ilalang sebagai bahan atap dan dindingnya. Pada zaman dahulu, Uma Lengge digunakan sebagai tempat tinggal oleh masyarakat Wawo dan sebagian digunakan juga sebagai lumbung. 
+            </p>
+            <span class="more-text" style="display:none;">
+                <p> Uma Lengge umumnya menggunakan empat tiang yang menumpu pada fondasi berupa sebuah batu sebagai tumpuan tiang. Konstruksi bangunan ini agar tahan gempa dan angin kencang atau dalam arti lainnya tidak mudah runtuh. Seluruh bagian merupakan satu kesatuan yang diletakkan di atas batu begitu saja. Tiang atau dalam bahasa Bima-nya Ri'i Uma berbentuk huruf A. Setiap Ri'i diberi Wole, semacam pasak untuk mengunci tiangnya. Ukuran fondasi biasanya bervariasi, tergantung besar tiang penyangga bangunan, pada pemasangan fondasi, langsung diletakkan di permukaan tanah.</p>
+                <p> Dalam Bahasa Mbojo, uma berarti "rumah", dan lengge mengacu pada bentuk "tinggi dan mengerucut". Jadi, uma lengge adalah rumah yang (atapnya) tinggi mengerucut. Namun, orang Donggo melafalkan kata lengge sebagai leme. Maka orang Donggo menyebut lumbung sekaligus rumah yang ditempatinya itu sebagai uma leme. Bedanya, atap uma leme tampak lebih runcing daripada atap uma lengge. Lengge sendiri sebenarnya nama bahan utama dalam pembuatan rumah tradisional ini. Lengge berbahan kayu yang berukuran 40x40 cm, sebanyak empat buah yang diletakkan pada bagian atas tiang utama. Lengge tersebut berfungsi sebagai penopang bagian atas bangunan. Uma Lengge sangat sulit untuk dinaiki ataupun dipanjat begitu saja, kecuali dengan menggunakan tangga. Yang menarik dari Uma Lengge adalah tikus tidak dapat naik ke atas rumah karena terhalang oleh Ngapi, dan batu fondasi pun konon katanya dimantrai oleh para sando (dukun) supaya tikus tidak bisa naik ke atas rumah. </p>
+            </span>
+            <button class="toggle-button" onclick="toggleText(this)">Baca Selengkapnya</button>
+        </div>
+
+
+        <div id="content2" class="content">
+            <h2>Poro Rante dan Pesangi</h2>
+            <img src="adat.jpg.jpg" alt="Roro Rante dan Pesanggi" width="400" height="200">
+            <p class="short-text">
+                Poro Rante adalah pakaian adat yang biasanya dikenakan oleh pria suku Bima. Pakaian ini terdiri dari beberapa bagian, termasuk sarung yang dikenakan di pinggang dan atasan berupa baju lengan pendek atau panjang yang sering kali terbuat dari bahan yang nyaman dan tahan lama.
+            </p>
+            <p class="short-text">
+                Pakaian ini umumnya menggunakan warna yang cerah dan motif yang kaya, mencerminkan kekayaan budaya dan kearifan lokal. Motif khas Poro Rante sering kali terinspirasi dari alam sekitar, seperti flora dan fauna yang ada di Bima. Poro Rante melambangkan status sosial dan identitas budaya pemakainya.
+            </p>
+            <span class="more-text" style="display:none;">
+                <p>Pasangi adalah pakaian adat yang dikenakan oleh wanita suku Bima. Pakaian ini biasanya terdiri dari atasan blus panjang yang dipadukan dengan sarung atau rok panjang. Model dan potongan Pasangi dapat bervariasi, tergantung pada acara dan situasi.</p>
+                <p>Seperti Poro Rante, Pasangi juga menonjolkan warna-warna cerah dan motif yang indah. Banyak motif pada Pasangi yang mencerminkan simbol-simbol budaya Bima, seperti simbol kesuburan, keberanian, dan keharmonisan. Pasangi mencerminkan keindahan, kesopanan, dan martabat wanita Bima.</p>
+                <p>Kedua pakaian ini sering dikenakan pada acara-acara resmi, pernikahan, dan upacara adat lainnya, menandakan identitas budaya yang kuat.</p>
+            </span>
+            <button class="toggle-button" onclick="toggleText(this)">Baca Selengkapnya</button>
+        </div>
+        
+
+        <div id="content3" class="content">
+            <h2>Range</h2>
+            <img src="makanan.jpg.jpg" alt="Range" width="400" height="200">
+            <p class="short-text">
+                Range adalah salah satu makanan khas Bima, Nusa Tenggara Barat (NTB) yang terbuat dari beras ketan, kelapa, dan gula. Makanan ini memiliki rasa manis dan gurih. Range bisa didapatkan di toko oleh-oleh atau pasar tradisional.
+            </p>
+            <span class="more-text" style="display:none;">
+                <p>Kue tradisional Bima yang satu ini sangat digemari. Apalagi dibelahannya ada gula putih dan bercampur dengan gurihnya adonan beras ketan dan kelapa yang menjadi bahan dasar pembuatan Range. Kue Range dihasilkan dengan dibakar di atas bara api. Untuk menghasilkan bentuk Range memang ada catakan khusus.</p>
+                <p>Pada masa lalu Range sering menjadi pelengkap dalam Jangko. Jangko adalah wejangan yang berisi berbagai macam jenis kue dan nasi yang disebut oha santa dan oha mina dalam acara-acara doa dan hajatan warga. Biasanya setelah doa dibagikan Jangko yang di dalamnya juga berisi kue Range.</p>
+            </span>
+            <button class="toggle-button" onclick="toggleText(this)">Baca Selengkapnya</button>
+        </div>
+
+        <div id="content4" class="content">
+            <h2>Minasarua</h2>
+            <img src="m2.jpg.jpg" alt="Minasarua" width="400" height="200">
+            <p class="short-text">
+                Minasarua adalah minuman tradisional yang dibuat dari bahan-bahan alami, biasanya dari fermentasi yang melibatkan berbagai bahan lokal, seperti beras, ketan, atau umbi-umbian. Minuman ini sering kali disajikan pada acara-acara adat, perayaan, dan pertemuan keluarga.
+            </p>
+            <span class="more-text" style="display:none;">
+                <p>Minasarua memiliki rasa yang khas, perpaduan antara manis, asam, dan sedikit rasa alkohol. Aroma fermentasinya memberikan keunikan tersendiri, membuatnya menjadi minuman yang menyegarkan.</p>
+                <p>Minasarua bukan hanya sekadar minuman, tetapi juga memiliki makna sosial dan budaya bagi masyarakat Bima. Minuman ini sering disajikan dalam acara adat, seperti pernikahan, syukuran, dan perayaan hari-hari besar, sebagai simbol pertemuan dan kebersamaan. Konsumsi Minasarua dapat menciptakan ikatan sosial antaranggota masyarakat dan menjadi bagian dari tradisi yang dilestarikan dari generasi ke generasi.</p>
+            </span>
+            <button class="toggle-button" onclick="toggleText(this)">Baca Selengkapnya</button>
+        </div>
+
+        <div id="content5" class="content">
+            <h2>Pulau Kelapa</h2>
+            <img src="laut.jpg.jpg" alt="Pulau Kelapa" width="400" height="200">
+            <p class="short-text">
+                Pulau Kelapa terkenal dengan pantai-pantainya yang bersih dan berpasir putih, dikelilingi oleh air laut yang jernih dengan gradasi biru yang menakjubkan. Pemandangan alam yang memukau, ditambah dengan pohon kelapa yang rindang, menciptakan suasana tropis yang sangat mengesankan.
+            </p>
+            <p class="short-text">
+                Ada beberapa Aktivitas Wisata, diantaranya : <br>
+                <ul>
+                    <li>Snorkeling dan Driving : Pulau Kelapa memiliki terumbu karang yang kaya akan keanekaragaman hayati. Aktivitas snorkeling dan diving sangat populer di kalangan wisatawan, memungkinkan pengunjung untuk menjelajahi keindahan bawah laut yang mempesona, termasuk berbagai jenis ikan dan biota laut lainnya. </li>
+                    <li>Berenang : Pantai-pantai yang tenang dan air yang jernih menjadikan Pulau Kelapa tempat yang ideal untuk berenang. Pengunjung dapat menikmati suasana pantai yang tenang dan bersantai di tepi laut.</li>
+                    <li>Pinknik dan Camping : Area yang luas dan asri di Pulau Kelapa memungkinkan pengunjung untuk melakukan piknik atau berkemah. Banyak pengunjung yang membawa perlengkapan camping untuk merasakan pengalaman tidur di bawah bintang-bintang di malam hari.</li>
+                </ul>
+            </p>
+            <span class="more-text" style="display:none;">
+                <p>Untuk mencapai Pulau Kelapa, pengunjung biasanya harus menempuh perjalanan menggunakan perahu dari Pelabuhan Bima. Perjalanan ini memakan waktu sekitar 30 menit hingga 1 jam, tergantung pada kondisi cuaca dan jenis perahu yang digunakan.</p>
+                <p>Pulau Kelapa merupakan salah satu destinasi wisata yang menyuguhkan kombinasi antara keindahan alam, aktivitas menarik, dan interaksi budaya yang kaya. Ini menjadikannya tempat yang ideal bagi para pelancong yang ingin merasakan pesona alam dan budaya Bima.</p>
+            </span>
+            <button class="toggle-button" onclick="toggleText(this)">Baca Selengkapnya</button>
+        </div>
+
+        <!-- Bagian Samping Kanan -->
+        <div class="right-panel">
+            <h3>Informasi Menarik</h3>
+            <p>Berikut adalah beberapa fakta unik kebudayaan Bima:</p>
+            <ul>
+                <li> Rumah tradisional suku Bima berbentuk panggung.</li>
+                <li> Pakaian adat Bima memiliki warna-warna yang khas.</li>
+                <li> Makanan tradisional suku Bima kaya akan rempah.</li>
+                <li> Minuman tradisional Bima mencerminkan rasa yang kaya akan rempah dan keterikatan masyarakat suku Bima dengan alam sekitar.</li>
+                <li> Wisata Populer Bima didominasi oleh laut .</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function toggleText(button) {
+            const moreText = button.previousElementSibling;
+            if (moreText.style.display === "none") {
+                moreText.style.display = "block"; // Menampilkan teks tambahan
+                button.textContent = "Baca Sedikitnya"; // Mengubah teks tombol
+            } else {
+                moreText.style.display = "none"; // Menyembunyikan teks tambahan
+                button.textContent = "Baca Selengkapnya"; // Mengubah teks tombol
+            }
+        }
+        </script>
+        
+
+    <!-- JavaScript untuk Konten Dinamis -->
+    <script>
+        function showContent(contentId) {
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            var selectedContent = document.getElementById(contentId);
+            selectedContent.classList.add('active');
+        }
+    </script>
+
+
+</body>
+</html>
